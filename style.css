@@ -1,39 +1,81 @@
 
 body {
-background-image: url("images/black.jpg");
-font-family: Roboto, Arial, Helvetica, sans-serif;
-}
+    background-image: url("images/yellow4.jpg");
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    }
+    
+    .jumbotron {
+        padding: 20px;
+        background-color: rgb(105, 98, 98);
+        color: whitesmoke;
+        border-radius: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        }
+    
+    #landing {
+        margin-left: 25px;
+    
+    }
+    
+    h1, p {
+        color: black;
+    }
 
-.jumbotron {
-    padding: 20px;
-    background-color: rgba(22, 21, 21, 0.644);
-    color: whitesmoke;
-    border-radius: 0;
+    .p-heading {
+        font-size: 20px;
+    }
+    
+    #start-button {
+        float: right;
+        margin: 60px 5px 15px 0;
+        border: 2px solid gray;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    hr {
+        width: cover;
+        margin-left: auto;
+        margin-right: auto;
+        height: 5px;
+        background-color:#666;
+        opacity: .5;
+    }
+    
+  
+    
+    .vl {
+        width: 6px;
+        background-color: solid green;
+        height: 100px;
 }
+    
+    #sidebar {
+        padding: 0 0 40px 40px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
 
-#landing {
-    margin-left: 25px;
+    }
 
-}
+    .sidewording {
+        font-size: 14px;
 
-h1, p {
-    color: black;
-}
+    }
 
-#start-button {
-    float: right;
-    margin: 40px 0 0 40px;
-    border: 3px solid gray;
-    padding: 30px;
-    font-weight: bold;
-    font-size: 25px;
-}
+    /*assessment questions*/
+    #assessment {
+        margin: 0px;
+        padding-top: 0px;
+        
+        position: relative;
+        transform: translateX(40%);
+        background: gray;
+    }
 
-hr {
-    width: cover;
-    margin-left: auto;
-    margin-right: auto;
-    height: 20px;
-    background-color:#666;
-    opacity: 0.5;
-}
+    .question {
+        font-size: 18px;
+        font-weight: bold;
+    }
