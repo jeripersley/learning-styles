@@ -29,8 +29,8 @@
 
    <!--landing page for assessment -->
 
-    <aside id="landing" class="row">
-        <div class="col-lg-6 col-md-4">
+    <section id="landing" class="row">
+        <div class="col-lg-8 col-md-4">
             <h2>What is Your Learning Style?</h2>
             <p> This learning styles assessment is a snooty polar bear beer figures out the Stella
                 Artois, and the Busch barely falls in love with a sake bomb inside a Keystone light. 
@@ -39,79 +39,82 @@
                 Stella Artois, and the Busch barely falls in love with a sake bomb. </p>
         </div>
 
-        <div class="col-lg-3 col-md-2">
+        <!--<div class="col-lg-3 col-md-2">
             <button id="start-button" type="button" class="btn btn-warning btn-lg" color="black">Let's Start Assessment!</button>    
         </div>
-     
 
-    </aside>
+        <div class="hero">
+                <img src="images/black-small.jpg" alt="black photo" width="300" height="300">
+        </div>-->
+
+    </section>
 
     <hr>
      <!-- side bar wording & image-->
-    <section id="sidebar">
-        <div class="col-lg-4 col-md-4 col-s-4">
-        <p class="sidewording">
-                A snooty polar bear beer figures out the Stella Artois, and the Busch barely falls in love with a sake bomb inside a Keystone light. 
-        </p>
-
-        <img src="images/black-small.jpg" alt="black photo" width="300" height="300">
-
-        <!--<hr class="vl">-->
-
-    </section>
     
-   <!--Assement questions -->
-     
-        <form id="assessment" class="row" action="/action_page.php">
-            <div class="col-lg-8">
+    <section id="wrapper">
+        <!--<section id="sidebar">
+            <div class="col-lg-4 col-md-4 col-s-4">
+            <p class="sidewording">
+                    A snooty polar bear beer figures out the Stella Artois, and the Busch barely falls in love with a sake bomb inside a Keystone light. 
+            </p>
+
+            <img src="images/black-small.jpg" alt="black photo" width="300" height="300">
+            </div>
+
+            <hr class="vl">
+
+        </section>-->
+        
+    <!--Assement questions -->
+        
+        <form id="assessment" class="row">
+            <div class="col-lg-12">
                 <p class="p-heading"> To what extent do the following statements apply to you?</p>
+
                 <p class="question">Q1. I learn a lot about a person by observing their facial expressions and body language.</p>
                 
-                    <label><input type="radio" name="q1" value="c1" checked>  A lot like me</label><br />
-                    <label><input type="radio" name="q1" value="c2">  Somewhat like me</label><br />
-                    <label><input type="radio" name="q1" value="c3">  Not like me at all</label><br /><br />
-            </div>
+                <label><input type="radio" name="q1" value="c1" checked>  A lot like me</label><br />
+                <label><input type="radio" name="q1" value="c2">  Somewhat like me</label><br />
+                <label><input type="radio" name="q1" value="c3">  Not like me at all</label><br /><br />
+            
 
-            <div class="col-lg-8">
+            
                 <p class="question">Q2. I learn a lot from diagrams and illustrations in textbooks.</p>
 
-                <label><input type="radio" name="q2" value="c1" checked>  A lot like me</label><br />
+                <label><input type="radio" name="q2" value="c1">  A lot like me</label><br />
                 <label><input type="radio" name="q2" value="c2">  Somewhat like me</label><br />
                 <label><input type="radio" name="q2" value="c3">  Not like me at all</label><br /><br />
-            </div>
             
-            <div class="col-lg-8">
+            
+            
                 <p class="question">Q3. I remember things I hear better than things I see.</p>
-                <input type="radio" name="q3" value="c1" checked>  A lot like me<br>
-                <input type="radio" name="q3" value="c2">  Somewhat like me<br>
-                <input type="radio" name="q3" value="c3">  Not like me at all<br><br>
-            </div>
 
-            <div class="col-lg-8">
+                <label><input type="radio" name="q3" value="c1">  A lot like me</label><br />
+                <label><input type="radio" name="q3" value="c2">  Somewhat like me</label><br />
+                <label><input type="radio" name="q3" value="c3">  Not like me at all</label><br /><br />
+           
+
+
                 <p class="question">Q4. I create songs and jingles to remember information.</p>
-                <input type="radio" name="q4" value="c1" checked>  A lot like me<br>
-                <input type="radio" name="q4" value="c2">  Somewhat like me<br>
-                <input type="radio" name="q4" value="c3">  Not like me at all<br><br>
-            </div>
 
-            <div class="col-lg-8">
+                <label><input type="radio" name="q4" value="c1">  A lot like me</label><br />
+                <label><input type="radio" name="q4" value="c2">  Somewhat like me</label><br />
+                <label><input type="radio" name="q4" value="c3">  Not like me at all</label><br /><br />
+            
+
+           
                 <p class="question">Q5. I draw the letters of a word with my fingers when trying to learn its spelling.</p>
-                <input type="radio" name="q5" value="c1" checked>  A lot like me<br>
-                <input type="radio" name="q5" value="c2">  Somewhat like me<br>
-                <input type="radio" name="q5" value="c3">  Not like me at all<br><br>
-            </div>
-
+                <label><input type="radio" name="q5" value="c1">  A lot like me</label><br />
+                <label><input type="radio" name="q5" value="c2">  Somewhat like me</label><br />
+                <label><input type="radio" name="q5" value="c3">  Not like me at all</label><br /><br />
+           
         </form>
-       
-<!--<button id="submit">Get Results</button> -->
-
- 
-
-    <section id="results-page">
-        <div id="results"></div>
-
     </section>
 
+    <button type="submit" id="results" onclick="tabulateAnswers()">Get Results</button>
 
+    <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
+  
 </body>
 </html>
