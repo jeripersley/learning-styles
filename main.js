@@ -25,6 +25,7 @@ function tabulateAnswers() {
     var c1score = 0;
     var c2score = 0;
     var c3score = 0;
+    
         
     // get a list of the radio inputs on the page
     var choices = document.getElementsByTagName('input');
@@ -64,9 +65,23 @@ function tabulateAnswers() {
   }
   
   // program the reset button
-  function resetAnswer() {
-    var resultsbox = document.getElementById('results');
-    resultsbox.innerHTML = "Here is your Learning Style";
+  function resetRadio() {
+    // start the game and re-render
+    radio();
+    clearSubmit();
+}
+
+  function radio() {
+    var radioButtonArray = document.getElementsByTagName('input');
+
+      for (var i=0; i<radioButtonArray.length; i++)   {
+        var radioButton = radioButtonArray[i];
+        radioButton.checked = false;
+      }
   }
-  
+
+  /* not sure how to clear learning style paragraph simultaneously with radio buttons*/
+  function clearSubmit() {
+     document.getElementById('results').innerHTML = "";
+}
     
