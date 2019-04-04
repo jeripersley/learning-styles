@@ -1,10 +1,11 @@
 
 body {
-    background-image: url("images/yellow4.jpg");
+    background: goldenrod;
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
     
 .jumbotron {
+    margin: auto;
     padding: 20px;
     background-color: rgb(105, 98, 98);
     color: whitesmoke;
@@ -15,8 +16,16 @@ body {
     }
 
 #landing {
-    margin-left: 25px;
+    margin: auto;
+    background-color: azure;
+    padding: 30px;
+    
 
+}
+
+#wrapper {
+    /*background-image: url("images/yellow4.jpg");*/
+    margin-top: 25px;
 }
 
 h1, p {
@@ -37,8 +46,7 @@ h1, p {
 
 hr {
     width: cover;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     height: 5px;
     background-color:#666;
     opacity: .5;
@@ -83,11 +91,11 @@ hr {
 
 .button {
     float: right;
-    margin: 10px 80px 0 0;
+    margin: 10px 60px 0 10px;
+    border-radius: 5px;
 }
 
-#results {
-    display: inline;
-    width: 100px;
-    margin-top: 10px;
+.p-results {
+    margin-top: 40px;
+    
 }

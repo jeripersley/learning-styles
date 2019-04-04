@@ -1,87 +1,134 @@
 
-/*$(document).ready(function() {
-  // when the new game button is clicked
-  $("#start-button").click(function() {
-      // start the game and re-render
-      startGame();
-      render();
+$(document).ready(function() {
+      radio();
   });
 
 
-//function render() 
-  if (model.gameHasStarted == click) {
-    $("#game").hide();
-      return
 
-//function startassessment() {
-  
-
-}*/
 
 // function to calculate the result of the survey
 function tabulateAnswers() {
     // initialize variables for each choice's score
     
-    var c1score = 0;
-    var c2score = 0;
-    var c3score = 0;
+    var a1score = 0;
+    var a2score = 0;
+    var a3score = 0;
+
+    var k1score = 0;
+    var k2score = 0;
+    var k3score = 0;
+
+    var v1score = 0;
+    var v2score = 0;
+    var v3score = 0;
     
         
     // get a list of the radio inputs on the page
-    var choices = document.getElementsByTagName('input');
+    var choicesA = document.getElementsByTagName('input');
     // loop through all the radio inputs
+    for (i=0; i<choicesA.length; i++) {
+      // if the radio is checked..
+      if (choicesA[i].checked) {
+        // add 1 to that choice's score
+        if (choicesA[i].value == 'a1') {
+          a1score = a1score + 1;
+        }
+        if (choicesA[i].value == 'a2') {
+          a2score = a2score + 1;
+        }
+        if (choicesA[i].value == 'a3') {
+          a3score = a3score + 1;
+        }
+      } 
+    }
+
+    var choicesK = document.getElementsByTagName('input');
     for (i=0; i<choices.length; i++) {
       // if the radio is checked..
-      if (choices[i].checked) {
+      if (choicesK[i].checked) {
         // add 1 to that choice's score
-        if (choices[i].value == 'c1') {
-          c1score = c1score + 1;
+        if (choicesK[i].value == 'k1') {
+          k1score = k1score + 1;
         }
-        if (choices[i].value == 'c2') {
-          c2score = c2score + 1;
+        if (choicesK[i].value == 'k2') {
+          k2score = k2score + 1;
         }
-        if (choices[i].value == 'c3') {
-          c3score = c3score + 1;
+        if (choicesK[i].value == 'k3') {
+          k3score = k3score + 1;
         }
-      }
+      } 
     }
-    
-    // Find out which choice got the highest score.
+
+      var choicesV = document.getElementsByTagName('input');
+      for (i=0; i<choicesV.length; i++) {
+        // if the radio is checked..
+        if (choicesV[i].checked) {
+          // add 1 to that choice's score
+          if (choicesV[i].value == 'v1') {
+            v1score = v1score + 1;
+          }
+          if (choicesV[i].value == 'v2') {
+            v2score = v2score + 1;
+          }
+          if (choicesV[i].value == 'v3') {
+            v3score = v3score + 1;
+          }
+        }
+      } 
+         
+         
+    // Find out which choice got the highest score for Auditory.
   
-    var maxscore = Math.max(c1score,c2score,c3score);
-    
+    //var maxscoreA = Math.max(a1score,a2score,a3score);
+
+     // Find out which choice got the highest score for Kinesthetic.
+  
+    //var maxscoreK = Math.max(k1score,k2score,k3score);
+
+    // Find out which choice got the highest score for Visual.
+  
+    //var maxscoreV = Math.max(v1score,v2score,v3score);
+
+
+
+    // Determine highest of the 3 types
+    var overallmax = Math.max(a1score, k1score, v1score);
+
     // Display answer corresponding to that choice
     var resultsbox = document.getElementById('results');
-    if (c1score == maxscore) { // If user chooses the first choice the most, this outcome will be displayed.
-      resultsbox.innerHTML = "You are a computer researcher! You will enjoy developing algorithms, and doing things with computers no one else has done before. For example, researchers sent a robot to the moon, built a computer to beat the best humans in Jeopardy, and are creating robots to do your chores for you. Computer researchers typically go to college and work at universities, or as a part of the research and development team in companies.";
-    }
-    if (c2score == maxscore) { // If user chooses the second choice the most, this outcome will be displayed.
-      resultsbox.innerHTML = "You are an altruistic coder! You love to help people and feel the positive impact of your work every day. Altrustic coders are out there every day making the world a better place. Computer scientists write software to more effectively help doctors diagnose illnesses such as cancer, connect people in third world countries to education and medical resources on the internet, code websites and software for nonprofit organizations, and much more!";
-    }
-    if (c3score == maxscore) { // If user chooses the third choice the most, this outcome will be displayed.
-      resultsbox.innerHTML = "You are a developer! Developers create games, apps, social media, movies, and all sorts of fun programs that people enjoy. These coders work on projects such as Minecraft, Poptropica, and Youtube. Developers need sharp coding skills, are great debuggers, and need to work well in a team of other developers.";
-    }
- 
-  }
+      if (a1score == overallmax) { // If user chooses the first choice the most, this outcome will be displayed.
+        resultsbox.innerHTML = "You are an Auditory Learner! You will enjoy developing algorithms, and doing things with computers no one else has done before. For example, researchers sent a robot to the moon, built a computer to beat the best humans in Jeopardy, and are creating robots to do your chores for you.";
+      }
+      if (k1score == overallmax) { // If user chooses the second choice the most, this outcome will be displayed.
+        resultsbox.innerHTML = "You are a Kinesthetic/Tactile Learner! You love to help people and feel the positive impact of your work every day. Altrustic coders are out there every day making the world a better place.";
+      }
+      if (v1score == overallmax) { // If user chooses the third choice the most, this outcome will be displayed.
+        resultsbox.innerHTML = "You are a Visual Learner! Developers create games, apps, social media, movies, and all sorts of fun programs that people enjoy. These coders work on projects such as Minecraft, Poptropica, and Youtube.";
+      }
+      
   
+
+
+
+
   // program the reset button
   function resetRadio() {
     // start the game and re-render
     radio();
     clearSubmit();
-}
-
-  function radio() {
-    var radioButtonArray = document.getElementsByTagName('input');
-
-      for (var i=0; i<radioButtonArray.length; i++)   {
-        var radioButton = radioButtonArray[i];
-        radioButton.checked = false;
-      }
   }
+/* clears radio buttons*/
+    function radio() {
+      var radioButtonArray = document.getElementsByTagName('input');
 
-  /* not sure how to clear learning style paragraph simultaneously with radio buttons*/
-  function clearSubmit() {
-     document.getElementById('results').innerHTML = "";
+        for (var i=0; i<radioButtonArray.length; i++)   {
+          var radioButton = radioButtonArray[i];
+          radioButton.checked = false;
+        }
+    }
+
+    /* clears results paragraph*/
+    function clearSubmit() {
+      document.getElementById('results').innerHTML = "";
+    }
 }
-    
