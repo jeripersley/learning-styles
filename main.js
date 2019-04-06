@@ -1,28 +1,26 @@
-
+/*
 $(document).ready(function() {
-      radio();
-  });
+      resetRadio();
+  });*/
 
+// initialize variables for each choice's score
+    
+var a1score = 0;
+var a2score = 0;
+var a3score = 0;
 
+var k1score = 0;
+var k2score = 0;
+var k3score = 0;
+
+var v1score = 0;
+var v2score = 0;
+var v3score = 0;
 
 
 // function to calculate the result of the survey
 function tabulateAnswers() {
-    // initialize variables for each choice's score
     
-    var a1score = 0;
-    var a2score = 0;
-    var a3score = 0;
-
-    var k1score = 0;
-    var k2score = 0;
-    var k3score = 0;
-
-    var v1score = 0;
-    var v2score = 0;
-    var v3score = 0;
-    
-        
     // get a list of the radio inputs on the page
     var choicesA = document.getElementsByTagName('input');
     // loop through all the radio inputs
@@ -43,7 +41,7 @@ function tabulateAnswers() {
     }
 
     var choicesK = document.getElementsByTagName('input');
-    for (i=0; i<choices.length; i++) {
+    for (i=0; i<choicesK.length; i++) {
       // if the radio is checked..
       if (choicesK[i].checked) {
         // add 1 to that choice's score
@@ -59,23 +57,23 @@ function tabulateAnswers() {
       } 
     }
 
-      var choicesV = document.getElementsByTagName('input');
-      for (i=0; i<choicesV.length; i++) {
-        // if the radio is checked..
-        if (choicesV[i].checked) {
-          // add 1 to that choice's score
-          if (choicesV[i].value == 'v1') {
-            v1score = v1score + 1;
-          }
-          if (choicesV[i].value == 'v2') {
-            v2score = v2score + 1;
-          }
-          if (choicesV[i].value == 'v3') {
-            v3score = v3score + 1;
-          }
+    var choicesV = document.getElementsByTagName('input');
+    for (i=0; i<choicesV.length; i++) {
+      // if the radio is checked..
+      if (choicesV[i].checked) {
+        // add 1 to that choice's score
+        if (choicesV[i].value == 'v1') {
+          v1score = v1score + 1;
         }
-      } 
-         
+        if (choicesV[i].value == 'v2') {
+          v2score = v2score + 1;
+        }
+        if (choicesV[i].value == 'v3') {
+          v3score = v3score + 1;
+        }
+      }
+    } 
+  }       
          
     // Find out which choice got the highest score for Auditory.
   
@@ -108,27 +106,27 @@ function tabulateAnswers() {
       
   
 
+// reset page
+/*function resetRadio() {
+  
+  radio();
+  clearSubmit();
+}
 
 
+      // clears radio buttons
+function radio() {
+  var radioButtonArray = document.getElementsByTagName('input');
 
-  // program the reset button
-  function resetRadio() {
-    // start the game and re-render
-    radio();
-    clearSubmit();
-  }
-/* clears radio buttons*/
-    function radio() {
-      var radioButtonArray = document.getElementsByTagName('input');
-
-        for (var i=0; i<radioButtonArray.length; i++)   {
-          var radioButton = radioButtonArray[i];
-          radioButton.checked = false;
-        }
-    }
-
-    /* clears results paragraph*/
-    function clearSubmit() {
-      document.getElementById('results').innerHTML = "";
+    for (var i=0; i<radioButtonArray.length; i++)   {
+      var radioButton = radioButtonArray[i];
+      radioButton.checked = false;
     }
 }
+    
+    // clears results paragraph
+function clearSubmit() {
+  document.getElementById('results').innerHTML = "";
+}
+
+*/
